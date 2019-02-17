@@ -6,8 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Emotional Support Alligator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css"> -->
-  <!-- <script src="main.js"></script> -->
   <style>
     .center {
       display: flex;
@@ -18,7 +16,12 @@
     }
 
     .alligator {
+      cursor: pointer;
       animation: alligator-spin infinite 4s linear;
+    }
+
+    .alligator.reverse {
+      animation: alligator-spin infinite reverse 4s linear;
     }
 
     @keyframes alligator-spin {
@@ -31,12 +34,26 @@
       }
     }
   </style>
+
+
 </head>
 
 <body>
   <div class="center">
-    <img alt="alligator" src="alligator.png" class="alligator">
+    <img alt="alligator" src="alligator.png" class="alligator" style="font-size: 14px;">
   </div>
 </body>
+<script>
+
+  document.querySelector('.alligator').addEventListener('click', (e) => {
+    const className = e.target.className;
+    if (className.includes('reverse')) {
+      e.target.className = 'alligator';
+    } else {
+      e.target.className += ' reverse';
+    }
+  });
+
+</script>
 
 </html>
