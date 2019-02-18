@@ -17,20 +17,20 @@
 
     .alligator {
       cursor: pointer;
-      animation: alligator-spin infinite 4s linear;
+      animation: alligator-spin infinite 2s ease-out;
     }
 
     .alligator.reverse {
-      animation: alligator-spin infinite reverse 4s linear;
+      animation: alligator-spin infinite reverse 2s ease-out;
     }
 
     @keyframes alligator-spin {
       from {
-        transform: rotate(0deg);
+        transform: rotate(0deg) scale(0.05);
       }
 
       to {
-        transform: rotate(360deg);
+        transform: rotate(360deg) scale(1);
       }
     }
   </style>
